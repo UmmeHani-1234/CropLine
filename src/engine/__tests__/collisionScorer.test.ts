@@ -5,10 +5,8 @@ import { AgronomyDataLoader } from '../dataLoader';
 import { WeatherEvent, DailyWeather } from '../types';
 
 describe('CollisionScorer', () => {
-  const wheat = AgronomyDataLoader.getCrop('wheat');
   const loamSoil = AgronomyDataLoader.getSoil('loam');
   const claySoil = AgronomyDataLoader.getSoil('clay');
-  const sandSoil = AgronomyDataLoader.getSoil('sand');
 
   // Synthetic heavy rain event
   const heavyRainEvent: WeatherEvent = {

@@ -1,10 +1,8 @@
-import { WeatherEvent, CropTimeline, SoilType, CollisionResult, ImpactLevel, CropStage } from './types';
+import { WeatherEvent, CropTimeline, SoilType, CollisionResult, ImpactLevel } from './types';
 import { AgronomyDataLoader } from './dataLoader';
 import { StageEngine } from './stageEngine';
 
 export class CollisionScorer {
-  private static impactLevelsOrder: ImpactLevel[] = ['beneficial', 'none', 'low', 'medium', 'high', 'critical'];
-
   /**
    * Score the agronomic impact of a single weather event landing on a crop timeline with given soil.
    */
@@ -62,8 +60,7 @@ export class CollisionScorer {
       }
     }
 
-    // 4. Check for special "Beneficial Rain" scenarios:
-    // e.g. Moderate or light rain after moisture stress at tillering or jointing
+    // 4. Check for special "Beneficial Rain" scenarios
     const isBeneficial = finalImpactLevel === 'beneficial';
 
     // 5. Interpolate template parameters

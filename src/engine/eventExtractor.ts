@@ -1,5 +1,4 @@
 import { DailyWeather, WeatherEvent, EventType, ConfidenceLevel } from './types';
-import { AgronomyDataLoader } from './dataLoader';
 
 export class EventExtractor {
   /**
@@ -7,7 +6,6 @@ export class EventExtractor {
    */
   public static extractEvents(dailyWeather: DailyWeather[]): WeatherEvent[] {
     const events: WeatherEvent[] = [];
-    const rainClasses = AgronomyDataLoader.getRainClasses();
 
     if (!dailyWeather || dailyWeather.length === 0) {
       return events;
@@ -58,7 +56,7 @@ export class EventExtractor {
           eventName = 'Light Rain Shower';
         }
 
-        const confidence = this.computeConfidence(maxProb, totalPrecip);
+        const confidence = this.computeConfidence(maxProb);
 
         events.push({
           id: `rain_${startDate}_${endDate}`,
@@ -142,7 +140,6 @@ export class EventExtractor {
     for (let h = 0; h < dailyWeather.length; h++) {
       const day = dailyWeather[h];
       if (day.tMax >= 34.0) {
-        // Cluster consecutive heat days
         let heatEnd = h;
         let peakTemp = day.tMax;
         let peakDate = day.date;
@@ -220,7 +217,7 @@ export class EventExtractor {
     return events.sort((a, b) => a.startDate.localeCompare(b.startDate));
   }
 
-  private static computeConfidence(probability: number, magnitude: number): ConfidenceLevel {
+  private static computeConfidence(probability: number): ConfidenceLevel {
     if (probability >= 80) return 'high';
     if (probability >= 50) return 'medium';
     return 'low';
