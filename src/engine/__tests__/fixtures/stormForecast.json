@@ -1,0 +1,9 @@
+[
+  { "date": "2026-02-10", "tMax": 23.0, "tMin": 10.0, "precipitationSum": 0.0, "precipitationProbabilityMax": 10, "isHistorical": true },
+  { "date": "2026-02-11", "tMax": 22.0, "tMin": 11.0, "precipitationSum": 0.0, "precipitationProbabilityMax": 20, "isHistorical": false },
+  { "date": "2026-02-12", "tMax": 20.0, "tMin": 13.0, "precipitationSum": 12.0, "precipitationProbabilityMax": 65, "isHistorical": false },
+  { "date": "2026-02-13", "tMax": 18.0, "tMin": 12.0, "precipitationSum": 78.5, "precipitationProbabilityMax": 95, "isHistorical": false },
+  { "date": "2026-02-14", "tMax": 19.0, "tMin": 11.0, "precipitationSum": 18.0, "precipitationProbabilityMax": 70, "isHistorical": false },
+  { "date": "2026-02-15", "tMax": 22.0, "tMin": 9.0, "precipitationSum": 0.0, "precipitationProbabilityMax": 15, "isHistorical": false },
+  { "date": "2026-02-16", "tMax": 24.0, "tMin": 10.0, "precipitationSum": 0.0, "precipitationProbabilityMax": 5, "isHistorical": false }
+]

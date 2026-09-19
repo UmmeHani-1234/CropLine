@@ -1,0 +1,72 @@
+{
+  "version": "1.0.0",
+  "source": "Illustrative Soil Water Balance & Agricultural Drainage Guidelines",
+  "verified": false,
+  "soils": [
+    {
+      "id": "clay",
+      "name": "Clay Soil",
+      "description": "High water retention, slow infiltration. Prone to waterlogging and surface pooling during rain.",
+      "waterHoldingCapacityMmPerMeter": 200,
+      "infiltrationRateMmPerHour": 3.0,
+      "waterloggingRiskModifier": 1,
+      "droughtRiskModifier": -1,
+      "rainThresholdMultiplier": 0.8,
+      "drySpellThresholdDaysModifier": 2,
+      "source": "Illustrative Soil Physics Tables",
+      "verified": false
+    },
+    {
+      "id": "black_soil",
+      "name": "Black Cotton Soil (Vertisol)",
+      "description": "Deep clay-rich soil with very high swell-shrink capacity. Holds moisture long but drains very slowly.",
+      "waterHoldingCapacityMmPerMeter": 220,
+      "infiltrationRateMmPerHour": 2.5,
+      "waterloggingRiskModifier": 1,
+      "droughtRiskModifier": -1,
+      "rainThresholdMultiplier": 0.75,
+      "drySpellThresholdDaysModifier": 3,
+      "source": "Illustrative ICAR Vertisol Management",
+      "verified": false
+    },
+    {
+      "id": "loam",
+      "name": "Loam / Medium Soil",
+      "description": "Balanced texture with ideal drainage and moisture retention for cereal crops.",
+      "waterHoldingCapacityMmPerMeter": 150,
+      "infiltrationRateMmPerHour": 12.0,
+      "waterloggingRiskModifier": 0,
+      "droughtRiskModifier": 0,
+      "rainThresholdMultiplier": 1.0,
+      "drySpellThresholdDaysModifier": 0,
+      "source": "Illustrative Standard Agronomy Baselines",
+      "verified": false
+    },
+    {
+      "id": "sandy_loam",
+      "name": "Sandy Loam",
+      "description": "Free-draining soil with moderate moisture retention. Drains quickly after rain but dries out faster.",
+      "waterHoldingCapacityMmPerMeter": 110,
+      "infiltrationRateMmPerHour": 20.0,
+      "waterloggingRiskModifier": -1,
+      "droughtRiskModifier": 1,
+      "rainThresholdMultiplier": 1.15,
+      "drySpellThresholdDaysModifier": -1,
+      "source": "Illustrative Soil Water Baselines",
+      "verified": false
+    },
+    {
+      "id": "sand",
+      "name": "Sandy Soil",
+      "description": "Rapid drainage, very low water retention. High drought risk during dry spells, low waterlogging risk.",
+      "waterHoldingCapacityMmPerMeter": 60,
+      "infiltrationRateMmPerHour": 40.0,
+      "waterloggingRiskModifier": -2,
+      "droughtRiskModifier": 2,
+      "rainThresholdMultiplier": 1.35,
+      "drySpellThresholdDaysModifier": -2,
+      "source": "Illustrative Soil Physics Tables",
+      "verified": false
+    }
+  ]
+}

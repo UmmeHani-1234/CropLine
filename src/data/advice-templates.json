@@ -1,0 +1,42 @@
+{
+  "version": "1.0.0",
+  "defaultLocale": "en",
+  "translations": {
+    "en": {
+      "verdicts": {
+        "CRITICAL_ALERT": "Your {cropName} is at {stageName}. {eventDescription}. {impactReason} {primaryAction}",
+        "HIGH_RISK": "Your {cropName} is at {stageName}. {eventDescription}. {impactReason} {primaryAction}",
+        "BENEFICIAL_EVENT": "Your {cropName} is at {stageName}. {eventDescription}. {impactReason} {primaryAction}",
+        "MODERATE_ADVISORY": "Your {cropName} is at {stageName}. {eventDescription}. {primaryAction}",
+        "FAVORABLE_CONDITIONS": "Your {cropName} is at {stageName}. Weather conditions are stable and favorable for the next 7 days. Continue standard crop care."
+      },
+      "decisions": {
+        "spray_window_available": "Spray window: {windowTime} (Wind < {maxWind} km/h, Rain probability < {rainProb}%)",
+        "spray_hold": "Do not spray: High wind ({windSpeed} km/h) or rain risk ({rainProb}%) in next 24h",
+        "irrigation_skip": "Skip irrigation: {rainAmount} mm rain expected {rainTiming}",
+        "irrigation_due": "Irrigate within {dueDays} days: Critical stage ({stageName}) facing moisture deficit",
+        "irrigation_hold_drainage": "Open field drainage furrows to prevent root zone saturation",
+        "fertilizer_apply": "Fertilizer top-dressing window: {windowTime} (Moist soil, gentle absorption)",
+        "fertilizer_hold": "Do not apply fertilizer: Rain risk will leach or wash off nutrients",
+        "harvest_now": "Harvest immediately before {eventTiming} if grain moisture < 14%",
+        "harvest_wait": "Wait for grain dry-down: Next dry window begins {windowStart}",
+        "frost_protection": "Apply evening surface misting / light irrigation to mitigate ground frost",
+        "heat_cooling": "Apply canopy misting or light sprinkler pass to reduce canopy temperature",
+        "field_scout": "Scout for disease symptoms ({stageName} vulnerability after wet spell)"
+      },
+      "confidence": {
+        "high": "high confidence",
+        "medium": "moderate confidence",
+        "low": "low confidence / high variance"
+      },
+      "impactLevels": {
+        "beneficial": "Beneficial",
+        "none": "Neutral",
+        "low": "Low Impact",
+        "medium": "Moderate Concern",
+        "high": "High Risk",
+        "critical": "Critical Warning"
+      }
+    }
+  }
+}

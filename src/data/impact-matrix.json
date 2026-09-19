@@ -1,0 +1,361 @@
+{
+  "version": "1.0.0",
+  "source": "Illustrative ICAR / CIMMYT Wheat Weather Impact Framework",
+  "verified": false,
+  "crops": {
+    "wheat": {
+      "stages": {
+        "sowing_emergence": {
+          "heavy_rain": {
+            "impactLevel": "low",
+            "score": 2,
+            "ruleId": "RULE_WHEAT_EMERGENCE_HEAVY_RAIN",
+            "headline": "Crusting & Emergence Risk",
+            "summaryTemplate": "Heavy rain ({amount} mm) may cause topsoil crusting and seed rot before full seedling emergence.",
+            "advisory": "Ensure surface channels allow drainage so seedlings do not remain submerged."
+          },
+          "moderate_rain": {
+            "impactLevel": "beneficial",
+            "score": -2,
+            "ruleId": "RULE_WHEAT_EMERGENCE_MOD_RAIN",
+            "headline": "Optimal Seedbed Moisture",
+            "summaryTemplate": "Moderate rain ({amount} mm) settles soil around seeds, aiding uniform germination.",
+            "advisory": "Good germination moisture. Hold supplementary irrigation."
+          },
+          "light_rain": {
+            "impactLevel": "beneficial",
+            "score": -1,
+            "ruleId": "RULE_WHEAT_EMERGENCE_LIGHT_RAIN",
+            "headline": "Light Germination Moisture",
+            "summaryTemplate": "Gentle rain ({amount} mm) maintains topsoil moisture for young shoots.",
+            "advisory": "No action needed."
+          },
+          "dry_spell": {
+            "impactLevel": "medium",
+            "score": 3,
+            "ruleId": "RULE_WHEAT_EMERGENCE_DRY",
+            "headline": "Seedbed Drying Risk",
+            "summaryTemplate": "Prolonged dry spell ({durationDays} days) can desiccate young sprouts before root anchoring.",
+            "advisory": "Apply light light irrigation if top 5 cm soil has dried out completely."
+          },
+          "heat": {
+            "impactLevel": "low",
+            "score": 1,
+            "ruleId": "RULE_WHEAT_EMERGENCE_HEAT",
+            "headline": "Warm Germination Conditions",
+            "summaryTemplate": "Above-average temperature ({peakTemp}°C) speeds up coleoptile emergence.",
+            "advisory": "Monitor moisture to prevent fast surface evaporation."
+          },
+          "cold": {
+            "impactLevel": "low",
+            "score": 1,
+            "ruleId": "RULE_WHEAT_EMERGENCE_COLD",
+            "headline": "Delayed Emergence",
+            "summaryTemplate": "Cold temperatures ({minTemp}°C) slow down seedling emergence rate.",
+            "advisory": "Emergence will resume as temperatures recover."
+          }
+        },
+        "crown_root_initiation": {
+          "heavy_rain": {
+            "impactLevel": "medium",
+            "score": 3,
+            "ruleId": "RULE_WHEAT_CRI_HEAVY_RAIN",
+            "headline": "Root Zone Waterlogging Risk",
+            "summaryTemplate": "Heavy rain ({amount} mm) saturates the shallow crown zone, inhibiting crown root proliferation.",
+            "advisory": "Clear drainage furrows and avoid any field operations."
+          },
+          "moderate_rain": {
+            "impactLevel": "beneficial",
+            "score": -3,
+            "ruleId": "RULE_WHEAT_CRI_MOD_RAIN",
+            "headline": "Timely Crown Root Moisture",
+            "summaryTemplate": "Moderate rain ({amount} mm) at CRI provides vital moisture for crown root formation, saving an irrigation cycle.",
+            "advisory": "Skip planned CRI irrigation; weather provides ideal root development moisture."
+          },
+          "light_rain": {
+            "impactLevel": "beneficial",
+            "score": -2,
+            "ruleId": "RULE_WHEAT_CRI_LIGHT_RAIN",
+            "headline": "Beneficial Shallow Moisture",
+            "summaryTemplate": "Light rain ({amount} mm) moistens the active 5-10 cm crown root zone.",
+            "advisory": "Ideal moisture for root establishment."
+          },
+          "dry_spell": {
+            "impactLevel": "critical",
+            "score": 5,
+            "ruleId": "RULE_WHEAT_CRI_DRY",
+            "headline": "Crown Root Stress - Critical Stage",
+            "summaryTemplate": "Dry spell ({durationDays} days) at CRI restricts crown root anchoring, causing permanent tiller loss.",
+            "advisory": "Apply CRI irrigation immediately. This is the single most sensitive moisture stage."
+          },
+          "heat": {
+            "impactLevel": "low",
+            "score": 1,
+            "ruleId": "RULE_WHEAT_CRI_HEAT",
+            "headline": "High Evapotranspiration at CRI",
+            "summaryTemplate": "Temperatures reaching {peakTemp}°C accelerate soil drying around crown roots.",
+            "advisory": "Check root depth moisture; irrigate if dry."
+          },
+          "cold": {
+            "impactLevel": "low",
+            "score": 1,
+            "ruleId": "RULE_WHEAT_CRI_COLD",
+            "headline": "Mild Frost Tolerance",
+            "summaryTemplate": "Wheat at CRI is hardy to low temperatures ({minTemp}°C).",
+            "advisory": "No protection required."
+          }
+        },
+        "tillering": {
+          "heavy_rain": {
+            "impactLevel": "medium",
+            "score": 3,
+            "ruleId": "RULE_WHEAT_TILLERING_HEAVY_RAIN",
+            "headline": "Waterlogging at Tillering",
+            "summaryTemplate": "Heavy rain ({amount} mm) during tillering creates waterlogging, causing root asphyxiation and yellowing.",
+            "advisory": "Open field drains to prevent standing water for more than 24 hours. Hold nitrogen top-dressing."
+          },
+          "moderate_rain": {
+            "impactLevel": "beneficial",
+            "score": -3,
+            "ruleId": "RULE_WHEAT_TILLERING_MOD_RAIN",
+            "headline": "Beneficial Tillering Moisture",
+            "summaryTemplate": "Moderate rain ({amount} mm) fuels vigorous shoot growth and improves fertilizer uptake.",
+            "advisory": "Skip irrigation. Schedule nitrogen top-dressing right before or after the shower."
+          },
+          "light_rain": {
+            "impactLevel": "beneficial",
+            "score": -2,
+            "ruleId": "RULE_WHEAT_TILLERING_LIGHT_RAIN",
+            "headline": "Good Vegetative Growth Moisture",
+            "summaryTemplate": "Light rain ({amount} mm) supports canopy expansion.",
+            "advisory": "Ideal conditions for vegetative tillering."
+          },
+          "dry_spell": {
+            "impactLevel": "high",
+            "score": 4,
+            "ruleId": "RULE_WHEAT_TILLERING_DRY",
+            "headline": "Tiller Abortion Risk",
+            "summaryTemplate": "Dry spell ({durationDays} days) forces the plant to abort secondary tillers, reducing earhead count.",
+            "advisory": "Apply light irrigation to maintain tiller density."
+          },
+          "heat": {
+            "impactLevel": "low",
+            "score": 1,
+            "ruleId": "RULE_WHEAT_TILLERING_HEAT",
+            "headline": "Mild Heat at Tillering",
+            "summaryTemplate": "Peak temperature {peakTemp}°C increases canopy transpiration.",
+            "advisory": "Ensure soil moisture is adequate."
+          },
+          "cold": {
+            "impactLevel": "none",
+            "score": 0,
+            "ruleId": "RULE_WHEAT_TILLERING_COLD",
+            "headline": "Favorable Cool Tillering Weather",
+            "summaryTemplate": "Cool weather ({minTemp}°C) promotes healthy tiller branching and strong crown roots.",
+            "advisory": "Ideal weather for wheat tillering."
+          }
+        },
+        "jointing_booting": {
+          "heavy_rain": {
+            "impactLevel": "high",
+            "score": 4,
+            "ruleId": "RULE_WHEAT_JOINTING_HEAVY_RAIN",
+            "headline": "Lodging & Stem Weakness Risk",
+            "summaryTemplate": "Heavy rain ({amount} mm) combined with wind risks early stem lodging and foliar disease.",
+            "advisory": "Ensure rapid drainage. Delay any chemical sprays until canopy dries."
+          },
+          "moderate_rain": {
+            "impactLevel": "beneficial",
+            "score": -2,
+            "ruleId": "RULE_WHEAT_JOINTING_MOD_RAIN",
+            "headline": "Ear Development Moisture",
+            "summaryTemplate": "Moderate rain ({amount} mm) supports rapid stem elongation and earhead development.",
+            "advisory": "Hold scheduled irrigation."
+          },
+          "light_rain": {
+            "impactLevel": "beneficial",
+            "score": -1,
+            "ruleId": "RULE_WHEAT_JOINTING_LIGHT_RAIN",
+            "headline": "Favorable Canopy Moisture",
+            "summaryTemplate": "Light rain ({amount} mm) sustains active jointing growth.",
+            "advisory": "No intervention required."
+          },
+          "dry_spell": {
+            "impactLevel": "high",
+            "score": 4,
+            "ruleId": "RULE_WHEAT_JOINTING_DRY",
+            "headline": "Reduced Spikelet Count Risk",
+            "summaryTemplate": "Moisture deficit ({durationDays} dry days) restricts head size and potential grains per spike.",
+            "advisory": "Provide critical booting irrigation before head emergence."
+          },
+          "heat": {
+            "impactLevel": "medium",
+            "score": 3,
+            "ruleId": "RULE_WHEAT_JOINTING_HEAT",
+            "headline": "Accelerated Booting under Warmth",
+            "summaryTemplate": "High temperature ({peakTemp}°C) accelerates phenology, shortening the spikelet formation window.",
+            "advisory": "Maintain soil moisture to buffer canopy temperature."
+          },
+          "cold": {
+            "impactLevel": "medium",
+            "score": 2,
+            "ruleId": "RULE_WHEAT_JOINTING_COLD",
+            "headline": "Cold Shock at Jointing",
+            "summaryTemplate": "Near-freezing temperatures ({minTemp}°C) can damage the sensitive growing tip inside the stem.",
+            "advisory": "Light irrigation can help moderate ground frost risk."
+          }
+        },
+        "flowering": {
+          "heavy_rain": {
+            "impactLevel": "high",
+            "score": 4,
+            "ruleId": "RULE_WHEAT_FLOWERING_HEAVY_RAIN",
+            "headline": "Pollen Washout & Disease Outbreak",
+            "summaryTemplate": "Heavy rain ({amount} mm) during flowering washes away pollen, causing floret sterility, head blight, and lodging.",
+            "advisory": "Prepare field drainage immediately. Skip all irrigation. Scout for Fusarium head blight after rain stops."
+          },
+          "moderate_rain": {
+            "impactLevel": "medium",
+            "score": 3,
+            "ruleId": "RULE_WHEAT_FLOWERING_MOD_RAIN",
+            "headline": "Pollination Disturbance Risk",
+            "summaryTemplate": "Moderate rain ({amount} mm) increases relative humidity and may disrupt open anthesis.",
+            "advisory": "Hold fungicide/insecticide sprays until flowers dry to avoid wash-off and pollinator damage."
+          },
+          "light_rain": {
+            "impactLevel": "low",
+            "score": 1,
+            "ruleId": "RULE_WHEAT_FLOWERING_LIGHT_RAIN",
+            "headline": "Humid Flowering Conditions",
+            "summaryTemplate": "Light rain ({amount} mm) dampens canopy; monitor for rust or foliar disease.",
+            "advisory": "Avoid spraying during active morning flowering (8 AM - 12 PM)."
+          },
+          "dry_spell": {
+            "impactLevel": "critical",
+            "score": 5,
+            "ruleId": "RULE_WHEAT_FLOWERING_DRY",
+            "headline": "Severe Anthesis Moisture Stress",
+            "summaryTemplate": "Drought stress ({durationDays} dry days) at flowering leads to pollen sterility and dramatic yield reduction.",
+            "advisory": "Irrigate immediately. Maintain 50-60% available soil water."
+          },
+          "heat": {
+            "impactLevel": "critical",
+            "score": 5,
+            "ruleId": "RULE_WHEAT_FLOWERING_HEAT",
+            "headline": "Terminal Heat - Floret Sterility Risk",
+            "summaryTemplate": "Temperatures exceeding {peakTemp}°C cause pollen desiccation, poor fertilization, and empty glumes.",
+            "advisory": "Apply light, frequent irrigation to create evaporative cooling in the microclimate. Consider potassium spray."
+          },
+          "cold": {
+            "impactLevel": "high",
+            "score": 4,
+            "ruleId": "RULE_WHEAT_FLOWERING_COLD",
+            "headline": "Frost Induced Head Sterility",
+            "summaryTemplate": "Frost or sub-4°C chill ({minTemp}°C) kills open wheat florets and damages developing ears.",
+            "advisory": "Apply light evening irrigation to release latent heat and protect against radiation frost."
+          }
+        },
+        "grain_filling": {
+          "heavy_rain": {
+            "impactLevel": "high",
+            "score": 4,
+            "ruleId": "RULE_WHEAT_GRAIN_FILLING_HEAVY_RAIN",
+            "headline": "Severe Lodging & Grain Shrivelling Risk",
+            "summaryTemplate": "Heavy rain ({amount} mm) combined with heavy top-weight heads leads to severe lodging and root rot.",
+            "advisory": "Ensure drainage ditches are clear. Avoid nitrogen fertilization."
+          },
+          "moderate_rain": {
+            "impactLevel": "low",
+            "score": 2,
+            "ruleId": "RULE_WHEAT_GRAIN_FILLING_MOD_RAIN",
+            "headline": "Grain Filling Moisture",
+            "summaryTemplate": "Moderate rain ({amount} mm) keeps soil moist for starch synthesis, but prolongs fungal vulnerability.",
+            "advisory": "Skip irrigation for 5-7 days."
+          },
+          "light_rain": {
+            "impactLevel": "beneficial",
+            "score": -1,
+            "ruleId": "RULE_WHEAT_GRAIN_FILLING_LIGHT_RAIN",
+            "headline": "Canopy Cooling Shower",
+            "summaryTemplate": "Light rain ({amount} mm) cools the canopy during milk stage.",
+            "advisory": "Beneficial cooling."
+          },
+          "dry_spell": {
+            "impactLevel": "high",
+            "score": 4,
+            "ruleId": "RULE_WHEAT_GRAIN_FILLING_DRY",
+            "headline": "Forced Premature Ripening",
+            "summaryTemplate": "Drought stress ({durationDays} dry days) cuts short the grain filling duration, reducing 1000-grain weight.",
+            "advisory": "Apply final grain-filling irrigation before dough stage."
+          },
+          "heat": {
+            "impactLevel": "critical",
+            "score": 5,
+            "ruleId": "RULE_WHEAT_GRAIN_FILLING_HEAT",
+            "headline": "Terminal Heat - Shriveled Grain Risk",
+            "summaryTemplate": "Extreme temperature ({peakTemp}°C) halts starch synthase enzymes, leading to early forced maturity and light grains.",
+            "advisory": "Apply canopy misting/light irrigation. Consider foliar spray of potassium nitrate or thiourea."
+          },
+          "cold": {
+            "impactLevel": "low",
+            "score": 1,
+            "ruleId": "RULE_WHEAT_GRAIN_FILLING_COLD",
+            "headline": "Extended Grain Filling",
+            "summaryTemplate": "Cooler temperatures ({minTemp}°C) slow down starch translocation but may increase final grain size.",
+            "advisory": "Normal management."
+          }
+        },
+        "maturity_harvest": {
+          "heavy_rain": {
+            "impactLevel": "critical",
+            "score": 5,
+            "ruleId": "RULE_WHEAT_MATURITY_HEAVY_RAIN",
+            "headline": "Pre-Harvest Sprouting & Direct Crop Loss",
+            "summaryTemplate": "Heavy rain ({amount} mm) on mature standing wheat triggers in-ear sprouting, fungal blackening, and severe lodging.",
+            "advisory": "Harvest mature crop immediately before the rain arrives if combine harvester is available, or secure drainage."
+          },
+          "moderate_rain": {
+            "impactLevel": "high",
+            "score": 4,
+            "ruleId": "RULE_WHEAT_MATURITY_MOD_RAIN",
+            "headline": "Harvest Delay & Grain Quality Degradation",
+            "summaryTemplate": "Moderate rain ({amount} mm) rewets dry grain, delaying harvest and degrading test weight and milling grade.",
+            "advisory": "Postpone harvest until 2 sunny days dry grain moisture below 14%."
+          },
+          "light_rain": {
+            "impactLevel": "medium",
+            "score": 3,
+            "ruleId": "RULE_WHEAT_MATURITY_LIGHT_RAIN",
+            "headline": "Moisture Hindrance at Harvest",
+            "summaryTemplate": "Light rain ({amount} mm) increases straw dampness, preventing clean threshing.",
+            "advisory": "Wait for morning dew and moisture to dissipate before combining."
+          },
+          "dry_spell": {
+            "impactLevel": "beneficial",
+            "score": -3,
+            "ruleId": "RULE_WHEAT_MATURITY_DRY",
+            "headline": "Ideal Harvest Weather",
+            "summaryTemplate": "Dry, sunny weather ({durationDays} dry days) allows rapid grain moisture drop to safe storage levels (<12%).",
+            "advisory": "Excellent harvest window. Complete harvesting and threshing promptly."
+          },
+          "heat": {
+            "impactLevel": "beneficial",
+            "score": -2,
+            "ruleId": "RULE_WHEAT_MATURITY_HEAT",
+            "headline": "Fast Desiccation for Harvest",
+            "summaryTemplate": "Warm dry conditions ({peakTemp}°C) accelerate final field dry-down.",
+            "advisory": "Prepare machinery and storage bins for harvesting."
+          },
+          "cold": {
+            "impactLevel": "low",
+            "score": 1,
+            "ruleId": "RULE_WHEAT_MATURITY_COLD",
+            "headline": "Slow Grain Drying",
+            "summaryTemplate": "Cool damp air ({minTemp}°C) slows natural grain dry-down.",
+            "advisory": "Monitor moisture meter before threshing."
+          }
+        }
+      }
+    }
+  }
+}

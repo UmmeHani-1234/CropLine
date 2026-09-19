@@ -1,0 +1,49 @@
+{
+  "version": "1.0.0",
+  "source": "India Meteorological Department (IMD) Rainfall Classification Standards",
+  "verified": true,
+  "classes": [
+    {
+      "id": "no_rain",
+      "name": "No Rain / Trace",
+      "minMm": 0.0,
+      "maxMm": 2.4,
+      "description": "Trace or no precipitation. Soil remains largely unaffected."
+    },
+    {
+      "id": "light_rain",
+      "name": "Light Rain",
+      "minMm": 2.5,
+      "maxMm": 15.5,
+      "description": "2.5 - 15.5 mm in 24 hours. Gentle moistening, beneficial for topsoil, low runoff risk."
+    },
+    {
+      "id": "moderate_rain",
+      "name": "Moderate Rain",
+      "minMm": 15.6,
+      "maxMm": 64.4,
+      "description": "15.6 - 64.4 mm in 24 hours. Good soil recharge; potential pooling in poorly drained soils."
+    },
+    {
+      "id": "heavy_rain",
+      "name": "Heavy Rain",
+      "minMm": 64.5,
+      "maxMm": 115.5,
+      "description": "64.5 - 115.5 mm in 24 hours. High waterlogging risk, runoff, lodging risk in tall crops."
+    },
+    {
+      "id": "very_heavy_rain",
+      "name": "Very Heavy Rain",
+      "minMm": 115.6,
+      "maxMm": 204.4,
+      "description": "115.6 - 204.4 mm in 24 hours. Severe inundation, root asphyxiation, severe crop lodging."
+    },
+    {
+      "id": "extremely_heavy_rain",
+      "name": "Extremely Heavy Rain",
+      "minMm": 204.5,
+      "maxMm": 9999.0,
+      "description": "Exceeding 204.4 mm in 24 hours. Catastrophic field flooding."
+    }
+  ]
+}

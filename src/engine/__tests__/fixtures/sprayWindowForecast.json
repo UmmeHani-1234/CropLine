@@ -1,0 +1,20 @@
+[
+  {
+    "date": "2026-02-18",
+    "tMax": 24.0,
+    "tMin": 12.0,
+    "precipitationSum": 0.0,
+    "precipitationProbabilityMax": 10,
+    "isHistorical": false,
+    "hourly": [
+      { "time": "2026-02-18T05:00:00", "temperature": 13.0, "precipitation": 0.0, "precipitationProbability": 5, "windSpeed": 6.0, "relativeHumidity": 75 },
+      { "time": "2026-02-18T06:00:00", "temperature": 14.5, "precipitation": 0.0, "precipitationProbability": 5, "windSpeed": 7.0, "relativeHumidity": 70 },
+      { "time": "2026-02-18T07:00:00", "temperature": 16.0, "precipitation": 0.0, "precipitationProbability": 5, "windSpeed": 8.0, "relativeHumidity": 65 },
+      { "time": "2026-02-18T08:00:00", "temperature": 18.5, "precipitation": 0.0, "precipitationProbability": 10, "windSpeed": 9.0, "relativeHumidity": 58 },
+      { "time": "2026-02-18T09:00:00", "temperature": 21.0, "precipitation": 0.0, "precipitationProbability": 10, "windSpeed": 11.0, "relativeHumidity": 52 },
+      { "time": "2026-02-18T10:00:00", "temperature": 23.0, "precipitation": 0.0, "precipitationProbability": 10, "windSpeed": 12.0, "relativeHumidity": 48 },
+      { "time": "2026-02-18T11:00:00", "temperature": 24.0, "precipitation": 0.0, "precipitationProbability": 15, "windSpeed": 14.0, "relativeHumidity": 45 },
+      { "time": "2026-02-18T12:00:00", "temperature": 24.5, "precipitation": 0.0, "precipitationProbability": 20, "windSpeed": 18.0, "relativeHumidity": 40 }
+    ]
+  }
+]
